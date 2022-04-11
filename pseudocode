@@ -1,4 +1,6 @@
 // creating a web page for cognixia
 echo "web page"
-adding a front end login button
+//adding a front end login button
 echo "new button"
+//fixing issue
+echo "issue has been fixed"
