@@ -1,6 +1,6 @@
-SRE
+
 		
-	Goal of SREs is to enable the product teams to move as fast as practically possible without impacting users.
+**Goal of SREs is to enable the product teams to move as fast as practically possible without impacting users.
 	
 	TALK-->	
 	User having issues with your service -
@@ -201,7 +201,7 @@ SRE
 				
 	DevOps
 
-Site Reliability Engineering
+**Site Reliability Engineering
 	
 	business requirement -> analyze -> coding
 	
@@ -209,16 +209,15 @@ Site Reliability Engineering
 	
 	Developer -> App					Operate and maintain the application
 	
-															load balance
+					load balance
 													
 	Domain -> host						Server1 - host application			Server2 - host 
-												  operate and maintain				  second copy of code
-												  the application
-												  AWS
+	operate and maintain				  	second copy of code
+	the application
+	AWS
+	Deploy the updated code
 	
-										Deploy the updated code
-	
-	Context: Launching a new feature vs reliability
+Context: Launching a new feature vs reliability
 	Product Teams want to move fast
 		Deploy as many features as possible
 		Deploy as fast as possible
@@ -227,7 +226,7 @@ Site Reliability Engineering
 		Break as little as possible
 		
 		
-	DevOps is a collaboration between Development and IT Operations to make software production and deploymnet in an automated and repeatable way
+**DevOps is a collaboration between Development and IT Operations to make software production and deploymnet in an automated and repeatable way
 
 	Development - Teamwork and Innovation
 	
