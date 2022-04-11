@@ -1,0 +1,9 @@
+SRE role
+DevOps
+Using GitBash
+Commands to create and add files to a directory
+Commands to create a branch locally and remotely
+Commands to merge code locally and remotely
+Pull and Clone
+Commits
+Issues
