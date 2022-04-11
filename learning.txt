@@ -1,0 +1,168 @@
+Source Code Management
+	purpose - version control
+		a system that keeps records of your changes
+		allows for collaborative development
+		allows you to know who made what changes and when
+		allows you to revert any changes and go back to a previous state
+
+		
+	GIT - Distributed Version Control System
+		All changes done to a repository are saved by GIT
+		Has its own file structure under the hood
+		Historical hash to content key is saved for each snapshow 
+		Can be used locally without internet connection
+		
+		Centralized - Remote repo - developers merge code - commit
+			If repository goes down or you lose local - always have to be connected to internet
+			Bad if centralized repo is lost
+				
+		Distributed - Must not have internet access to remote repo
+			Git -> commit -> local repository
+			To share -> push
+			Distributed copies, have redundancy
+			
+		Local
+			Working directory - git add - command for repository
+			
+			Staging Area - git commit -> local repo
+			
+			Local Repo - git push -> remote repo
+			
+		Remote Repo - Production Line - Main/Master branch
+			Pull
+			
+			mkdir - <<name>> name it make repository
+			cd <<name>>
+			git init - creates working directory
+			ls -la - list 
+			ls -la .git - all directories in git repo
+			ls -l
+			
+						
+			git config --list --global
+			git config --list --system
+			git config --list --local
+
+			git add <filename> - creates a file 
+			git add . (all files)
+			git commit -m "commit message"
+			
+      git vi <<filename>> - another way to 
+			To get in to the insert mode: press I
+			to exit: press esc , shift +:wq
+			
+			git status - shows files
+			
+			git rm - deletes file
+		
+		SHOW DIFF in BRANCHES
+			git diff <filename> - shows different versions
+		
+		VIEW ALL PROGRESS
+			git log --all --decorate --oneline --graph
+			git log --stat --summary
+			git log -p
+			git log --oneline
+			
+			gitk - opens new GUI that show all
+			
+			git restore --staged <filename>
+		
+		STASH		
+			git stash - saves WIP on feature
+			git stash list - show you what is stashed
+			git stash apply stash@[0] 
+			git stash pop[1] - takes it out of the stash
+			
+			git stash list - shows you the stash
+			git stash pop stash@{0}
+			
+			git stash clear = will clear all your stashes
+			git stash drop stash(1)
+			
+			git stash show stash@{1}
+			
+			git stash -u unflagged files (not previously committed)
+			git stash -a stash everything
+			
+		If customer is using a version, create a branch for the development and for the bug to work on new features.
+		Once devlopment is commited to branch -> merge into production line (main branch)
+		Pull request - ask to review -> must have multiple reviewers (at least 2) ->
+			has issues -> reject
+			needs work -> comment
+			good -> approve
+		-> merge to main 
+		
+		when particular branch only one feature is approved, delete the branch
+		when particular branch is needed for more, then keep it
+		
+		If users report a bug, create a new branch called "app-bug"
+		
+			git branch branch-name creating a branch
+			git switch branch-name - switching to branch
+			git branch -d - deletes branch
+			git merge branch-name - merges branch into main
+			git checkout -b new-branch - creates a new branch and switches to new branch
+
+
+MERGING TYPES - see commands above
+	Fast forward merge: In fast-forward merge, git simply moves the source branch pointer to the target branch pointer without creating an extra merge commit.
+	
+	Three-way merge: This is a common scenario for large features or when several developers are working on a project simultaneously. 
+		If the two branches you're trying to merge both changed the same part of the same file, Git won't be able to figure out which version to use. 
+		When such a situation occurs, it stops right before the merge commit so that you can resolve the conflicts manually.  
+		will see >>>>> and =========== and the text or code that is conflicting - will have to manually edit
+   
+GITHUB - Using the remote repository
+	push and pull
+		command: git push
+		command: git pull - accessing the master remote reporsitory
+	public and private
+		company work would always be private
+		
+git command to pull master:
+	git clone <<url>>
+	cd <<url>>
+	
+Create token
+	command push origin main
+	
+Delete token 
+	On github: revoke all tokens
+	generate new token
+	use token on git
+		git push origin main
+		
+	git remote -v 
+		shows files are synced or not
+		
+	git fetch - get on local repo what is remote
+		download files but decide later if you want to merge or not
+		
+	git branch -r (remote)
+	
+	git branch -a (local)
+	
+	git diff origin/main	
+		will show changes between remote and local
+	
+	git merge origin/main
+		merges the changes
+		
+	Steps when changing on Github
+	1. edit file and commit on GITHUB
+	2. git fetch on local
+	3. git status
+	4. git branch -r git branch -a 
+	5. git diff origin/main
+	6. git merge origin/main 
+	
+	ALWAYS USE GIT STATUS TO SEE IF CHANGES HAVE BEEN MADE.
+	
+	
+	1. create a branch in remote
+	2. create the branch at local
+	3.integrate local and remote branch
+	4. git pull -u origin <<branch-name>>
+	5. git push --set -upstream origin <<new-branch-name>>
+	6. git puah -u origin <<branch-name>>
