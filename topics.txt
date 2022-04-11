@@ -7,3 +7,4 @@ Commands to merge code locally and remotely
 Pull and Clone
 Commits
 Issues
+Please add pull request
